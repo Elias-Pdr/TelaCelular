@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documnt</title>
+    <style>
+        .cntrIframe{
+            background-color: aquamarine;
+        }
+        main{
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <div class="cntrIframe"><iframe id="iframe" width="560" height="315" src="https://www.youtube.com/embed/An7E9mLvpyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div>
+            <button onclick="aumentar()">+</button>
+            <p id="largura"></p>
+            <button onclick="diminuir()">-</button>
+        </div>
+
+    </main>
+
+    <script>
+
+att()
+        function att(){
+            document.getElementById("largura").innerHTML = document.getElementById("iframe").clientWidth
+        }
+        
+        function aumentar() {
+            document.getElementById("iframe").width = document.getElementById("iframe").clientWidth+4
+            document.getElementById("iframe").height = document.getElementById("iframe").clientHeight+4
+            att()
+        }
+
+        function diminuir() {
+            document.getElementById("iframe").width = document.getElementById("iframe").clientWidth-4
+            document.getElementById("iframe").height = document.getElementById("iframe").clientHeight-4
+            att()
+        }
+    </script>
 </body>
 </html>
